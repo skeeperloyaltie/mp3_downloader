@@ -13,10 +13,16 @@ mp3_files = glob.glob(os.path.join(directory, '*.mp3'))
 file_names = []
 
 # iterate through the list of mp3 files
+import re
+
+# iterate through the list of mp3 files
 for file in mp3_files:
     # get the file name without the extension
     file_name, _ = os.path.splitext(os.path.basename(file))
+    # Replace spaces and special characters
+    file_name = re.sub(r"[^a-zA-Z0-9]+", '_', file_name)
     file_names.append(file_name)
+
 
 # directory to save downloaded files
 download_directory = "C:/Users/fr34k/Music/files_downloaded"
