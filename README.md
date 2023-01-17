@@ -2,15 +2,15 @@
 This script is designed to download music files from YouTube.
 
 ## Requirements
-  Python 3.x
-  youtube-dl library
-  os,glob library
-  concurrent.futures library
+  - Python 3.x
+  - youtube-dl library
+  - os,glob library
+  - concurrent.futures library
 ## How to use
-  Replace the directory variable with the path of the directory containing the mp3 files
-  Replace the download_directory variable with the path of the directory where you want to save the downloaded files.
-  Run the script python 
-      downloader.py
+   - Replace the directory variable with the path of the directory containing the mp3 files
+   - Replace the download_directory variable with the path of the directory where you want to save the downloaded files.
+   - Run the script python 
+        - downloader.py
 ## Features
 - Downloads multiple files in parallel using ThreadPoolExecutor to minimize the time it takes to download the files.
 - Handles network errors by retrying the download a few times.
