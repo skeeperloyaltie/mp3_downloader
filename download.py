@@ -4,7 +4,7 @@ import youtube_dl
 import concurrent.futures
 
 # directory containing the mp3 files
-directory = "C:\Users\fr34k\Music\music"
+directory = "C:/Users/fr34k/Music/music"
 
 # get a list of all mp3 files in the directory
 mp3_files = glob.glob(os.path.join(directory, '*.mp3'))
@@ -19,7 +19,7 @@ for file in mp3_files:
     file_names.append(file_name)
 
 # directory to save downloaded files
-download_directory = "C:\Users\fr34k\Music\files_downloaded"
+download_directory = "C:/Users/fr34k/Music/files_downloaded"
 
 # function to download a file using youtube-dl
 def download_file(file_name):
