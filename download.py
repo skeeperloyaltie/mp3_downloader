@@ -30,13 +30,22 @@ download_directory = "C:/Users/fr34k/Music/files_downloaded"
 # function to download a file using youtube-dl
 # function to download a file using youtube-dl
 def download_file(file_name):
+    # ydl_opts = {
+    #     'outtmpl': download_directory + '/%(title)s.%(ext)s',
+    #     'quiet': True,
+    #     'retries': 3,
+    #     'continuedl': True,
+    #     'default_search': 'ytsearch1:',
+    #     'format': 'bestaudio[ext=mp3]/best'
+    # }
     ydl_opts = {
-        'outtmpl': download_directory + '/%(title)s.%(ext)s',
-        'quiet': True,
-        'retries': 3,
-        'continuedl': True,
-        'default_search': 'ytsearch1:',
-        'format': 'bestaudio[ext=mp3]/best'
+        'format': 'bestaudio/best',
+        'outtmpl': download_directory + '%(title)s.%(ext)s',
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': '192',
+        }],
     }
     url = file_name
     try:
