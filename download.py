@@ -41,6 +41,7 @@ def download_file(file_name):
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': download_directory + '%(title)s.%(ext)s',
+        'default_search' : 'ytsearch1:',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
